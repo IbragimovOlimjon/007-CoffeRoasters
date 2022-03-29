@@ -64,7 +64,7 @@ body {
 }
 
 *:focus {
-    outline-color: #1e90ff;                             
+    outline-color: var(--background-main-link);                             
     outline-offset: 2px;
     outline-width: 2px;
     outline-style: dashed;
@@ -185,6 +185,12 @@ img {
     border-radius: 100px;
     text-decoration: none;
     text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+.main-link:hover {
+    color: var(--color);
+    background-color: var(--color-heading);
 }
 
 .first-section-img {
@@ -233,16 +239,26 @@ img {
     display: block;
     width: 450px;
     list-style-type: none;
-    margin-right: 117px;
 }
 
-.main-images {
-    margin: 0;
-    margin-left: 117px;
+.main-info-title-one {
+    padding-left: 117px;
+    padding-right: 97px;
 }
 
-.main-info-title {
-    margin-left: 157px;
+.main-info-title-two {
+    padding-left: 157px;
+    padding-right: 117px;
+}
+
+.main-info-title-three {
+    padding-left: 117px;
+    padding-right: 157px;
+}
+
+.main-info-title-four {
+    padding-left: 157px;
+    padding-right: 97px;
 }
 
 .main-info-section-heading {
@@ -262,3 +278,4 @@ img {
     margin: 0;
     color: var(--color-main-heading-text);
 }
+
