@@ -1,3 +1,4 @@
+    /* CUSTOM-PROPS */
 :root {
     --background-main-link:#0A775F;
     --color-heading:#000;
@@ -6,15 +7,13 @@
     --color-main-links:#c99b67;
     --global-color:#F3D7B7;
     --section-link:#F8F8F2;
-    --subsection-bc:#F8F8F2;
     --font:"Roboto", "Arial", sans-serif;
 }
-
-
+    /* FONTS */
 @font-face {
     font-family: 'Roboto';
-    src: url('Roboto-Bold.woff2') format('woff2'),
-    url('Roboto-Bold.woff') format('woff');
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+    url('../fonts/Roboto-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -22,8 +21,8 @@
 
 @font-face {
     font-family: 'Roboto';
-    src: url('Roboto-Regular.woff2') format('woff2'),
-    url('Roboto-Regular.woff') format('woff');
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../fonts/Roboto-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -31,8 +30,8 @@
 
 @font-face {
     font-family: 'Roboto';
-    src: url('Roboto-Medium.woff2') format('woff2'),
-    url('Roboto-Medium.woff') format('woff');
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
+    url('../fonts/Roboto-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -61,7 +60,8 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: var(--color-heading);
+    background-color: var(--color);
+    color: var(--color-main-heading-text);
     font-family: var(--font);
 }
 
@@ -79,41 +79,54 @@ img {
 
 .container {
     width: 100%;
-    max-width: 1420px;
-    padding-left: 40px;
-    padding-right: 40px;
+    max-width: 1440px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* SITE-HEADER */
 
-.site-header {
-    background-color: var(--global-color);
+.site-header-wrapper {
+    background-image: url("../img/site-header-fon.jpg");
 }
+
+
+.site-header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .site-header-container {
     display: flex;
     align-items: center;
-    padding: 40px 50px;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .site-header-logo {
-    margin-right: auto;
-    
+    display: flex;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.site-header-logo:hover {
+    opacity: 0.8;
+}
+
+.site-header-logo:active {
+    opacity: 0.6;
 }
 
 .site-header-logo-img {
     display: block;
     width: 235px;
     height: 24px;
+    object-fit: contain;
 }
 
-.sitenav-title-link-list {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
 
 /* SITENAV */
 .sitenav-list {
@@ -124,14 +137,23 @@ img {
     margin-right: 40px;
 }
 
+.sitenav-title-link-list {
+    display: flex;
+    align-items: center;
+margin: 0;
+padding: 0;
+}
+
 .sitenav-link {
-    display: inline-block;
+    display: block;
     font-weight: 700;
     font-size: 12px;
-    line-height: 14px;
+    line-height: normal;
     letter-spacing: 1px;
+    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+    white-space: nowrap;
     color: var(--color-main-heading-text);
 }
 
@@ -139,13 +161,13 @@ img {
     border-bottom: 2px solid var(--background-main-link);
 }
 
+
+.sitenav-link:active {
+    opacity: 0.6;
+}
+
 /* FIRST-SECTION */
 
-.first-section {
-    
-}
-.container {
-}
 .first-section-information {
     display: flex;
     align-items: center;
@@ -388,10 +410,6 @@ img {
     margin-right: 393px;
 }
 
-.third-child-list {
-    margin-right: 404px;
-}
-
 .third-data-section-link {
     width: 60px;
     height: 60px;
@@ -414,7 +432,7 @@ img {
     height: 396px;
     list-style: none;
     padding: 20px 20px 40px 20px;
-    background-color: var(--subsection-bc);
+    background-color: var(--section-link);
 }
 
 .subsection-for-data:not(:last-child) {
@@ -532,4 +550,18 @@ img {
 
 .social-network-icon-link:hover {
     opacity: 0.4;
+}
+
+/* RETINA-BG */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+.site-header {
+background-image: url("../img/site-header-fon@2x.jpg");
+}   
+
 }
