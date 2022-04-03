@@ -183,6 +183,10 @@ img {
     padding-top: 116px;
 }
 
+.first-section-wrapper {
+    margin-right: 116px;
+}
+
 .first-section-heading {
     font-size: 64px;
     line-height: 74px;
@@ -444,12 +448,11 @@ img {
 }
 
 .how-work-box-content {
+    background-color: var(--section-link);
     display: flex;
     flex-direction: column;
-    width: 433px;
-    height: 396px;
+    flex-grow: 1;
     padding: 20px 20px 40px;
-    background-color: var(--section-link);
 }
 
 .how-work-box-content::before {
@@ -491,8 +494,8 @@ img {
 .site-footer {
     background-image: url("../img/footer-fon-bg.jpg");
     background-color: var(--global-color);
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 68px;
+    padding-bottom: 68px;
 }
 
 .site-footer-container {
